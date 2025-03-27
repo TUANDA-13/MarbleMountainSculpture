@@ -1,14 +1,11 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Josefin_Sans } from "next/font/google";
+import Image from "next/image";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const josefin = Josefin_Sans({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["100", "200", "400", "700"],
+  display: "swap",
 });
 
 export const metadata = {
@@ -18,10 +15,28 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" className={`${josefin.variable}`}>
+      <body>
+        <div className="flex max-w-[1228px] items-center w-full">
+          <div className="flex h-[34px] items-center margin-x-auto">
+            <Image
+              className="dark:invert"
+              src="/logo.svg"
+              alt="Next.js logo"
+              width={34}
+              height={34}
+              priority
+            />
+            <span>marblemountainsculpture</span>
+            <p className="font-medium">Tuan</p>
+            <div className="flex flex-col items-center">
+              <div className="text-lg font-bold bg-gradient-from-bl bg-gradient-to-tr from-[#000] via-[#4a1d16] to-[#833731] text-transparent bg-clip-text">
+                Home
+              </div>
+              <div className="w-1/2 h-1 mt-2 bg-gradient-to-tr from-[#000] via-[#4a1d16] to-[#833731] rounded-full" />
+            </div>
+          </div>
+        </div>
         {children}
       </body>
     </html>
