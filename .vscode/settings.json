@@ -9,7 +9,8 @@
   "css.validate": false,
   "editor.inlineSuggest.enabled": true,
   "tailwindCSS.emmetCompletions": true,
-  "cSpell.ignoreWords": [
-    "Josefin"
-  ],
+  "cSpell.ignoreWords": ["Josefin"],
+  "cSpell.words": ["marblemountainsculpture"],
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
