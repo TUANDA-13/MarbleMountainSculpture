@@ -1,50 +1,64 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: [
-    "./pages/**/*.js",
-    "./src/pages//*.{js,ts,jsx,tsx}",
-    "./components//*.{js,ts,jsx,tsx}",
+  content: [
+    './app/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    './src/**/*.{js,ts,jsx,tsx}',
   ],
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    borderRadius: {
-      base: "1rem",
-      lg: "3rem",
-      xl: "4rem",
-    },
-    colors: {
-      blue: {
-        dark: "#3f3d56",
+    extend: {
+      borderRadius: {
+        base: '1rem',
+        lg: '3rem',
+        xl: '4rem',
       },
-      gray: {
-        light: "#dfdede",
+      colors: {
+        bg: '#F1F1F1',
+        blue: {
+          dark: '#3f3d56',
+        },
+        primary: '#833731',
+        brand: '#ff3366',
+        gray: {
+          light: '#dfdede',
+        },
+        yellow: '#fecc01',
+        white: '#fff',
       },
-      yellow: "#fecc01",
-      white: "#fff",
+      container: {
+        center: true,
+        padding: '1rem',
+        screens: {
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
+          xl: '1228px',
+          '2xl': '1228px',
+        },
+      },
+      fontFamily: {
+        josefin: ['var(--font-josefin)', 'sans-serif'],
+      },
+      // fontWeight: {
+      //   thin: 100,
+      //   'extra-light': 200,
+      //   light: 300,
+      //   normal: 400,
+      //   medium: 500,
+      //   semibold: 600,
+      //   bold: 700,
+      //   extrabold: 800,
+      //   black: 900,
+      // },
+      opacity: {
+        'gallery-hover': '0.3',
+      },
+      zIndex: {
+        navbar: 20,
+        overlay: 30,
+      },
     },
-    fontSize: {
-      base: "16px",
-      lg: "20px",
-      xl: "2.4rem",
-      "2xl": "3rem",
-      "3xl": "3.6rem",
-      "4xl": "4.8rem",
-      "5xl": "6rem",
-    },
-    fontFamily: {
-      josefin: ["var(--font-josefin)", "sans-serif"],
-    },
-    fontWeight: {
-      bold: 900,
-    },
-    opacity: {
-      "gallery-hover": "0.3",
-    },
-    zIndex: {
-      navbar: 20,
-      overlay: 30,
-    },
-    extend: {},
   },
-  variants: {},
   plugins: [],
 };
