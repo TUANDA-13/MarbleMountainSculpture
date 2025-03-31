@@ -23,13 +23,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={cn(josefin.className)}>
-        <header className="bg-bg z-navbar sticky top-0">
+        <header className="bg-bg z-navbar sticky top-0 shadow-lg">
           <div className="container mx-auto px-4 max-w-[1228px] sticky top-0 z-navbar dark:bg-opacity-50 border-gray-light">
             <div className="flex items-center h-[96px] justify-between">
               <div className="flex h-[34px] items-center justify-center">
                 <Image
                   className="dark:invert mr-2"
-                  src="/logo.svg"
+                  src="svg/logo.svg"
                   alt="Next.js logo"
                   width={34}
                   height={34}

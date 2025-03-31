@@ -1,6 +1,9 @@
 @import 'tailwindcss';
 @import 'tailwindcss/utilities';
 @config "../../tailwind.config.js";
+@import "./custom.css";
+@import "./embla.css";
+
 
 :root {
   --background: #ffffff;
