@@ -1,11 +1,20 @@
 'use client';
 import { GradientTypo } from '@/common/gradient-text/GradientTipo';
-import ParticlesBg from 'particles-bg';
+import dynamic from 'next/dynamic';
+// import ParticlesBg from 'particles-bg';
 import { useEffect, useState } from 'react';
+const ParticlesBg = dynamic(() => import('particles-bg'), {
+  ssr: false,
+});
 
 const Intro = () => {
   const textArray = ['Fashionable.', 'Classic.', 'Elegant.', 'Uplifting.'];
   const [textState, setTextState] = useState(textArray[0]);
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    setIsReady(true);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -17,6 +26,8 @@ const Intro = () => {
     }, 5000);
     return () => clearInterval(interval); // Fix: Wrap clearInterval in a cleanup function
   }, [textArray]); // Fix: Add textArray as a dependency
+
+  if (!isReady) return null;
 
   return (
     <div className="[&>canvas]:bg-[#9D9C9C] h-[700px] overflow-hidden relative">
@@ -42,7 +53,7 @@ const Intro = () => {
             </p>
           </div>
         </div>
-      </div>  
+      </div>
     </div>
   );
 };

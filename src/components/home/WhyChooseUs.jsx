@@ -39,9 +39,7 @@ export default function WhyChooseUs() {
                 <img
                   src={images[current]}
                   alt={`Slide ${current + 1}`}
-                  fill
                   className="object-cover w-full h-full"
-                  priority
                 />
               </motion.div>
             </AnimatePresence>
@@ -65,14 +63,14 @@ export default function WhyChooseUs() {
         <div className="md:w-1/2">
           <h2 className="text-4xl font-bold mb-2">Why Choose Us</h2>
           <GradientLine className={'mt-4 mb-[88px]'} />
-          <p className="text-lg leading-7 text-gray-800">
+          <div className="text-lg leading-7 text-gray-800">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed non risus
             eget turpis dignissim gravida vel in lectus. Suspendisse at leo vitae odio scelerisque{' '}
             <GradientTypo text={'tincidunt'} className={'inline-block font-semibold'} />. Cras a
             quam eu velit tincidunt ultricies a in dolor. Aenean{' '}
             <GradientTypo text={'urna'} className={'inline-block font-semibold'} /> lorem id urna
             fermentum, at fermentum metus gravida. Curabitur vitae bibendum augue.
-          </p>
+          </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mt-10">
             {Array(6)

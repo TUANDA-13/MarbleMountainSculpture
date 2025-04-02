@@ -3,6 +3,7 @@ import { Feature } from './../components/home/Feature';
 import { Gallery } from '@/components/home/Gallery';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
 import Testimonials from '@/components/home/Testimonials';
+import { HomeBlogs } from '@/components/home/Blogs';
 
 const Home = () => {
 
@@ -13,6 +14,7 @@ const Home = () => {
       <Gallery />
       <WhyChooseUs />
       <Testimonials />
+      <HomeBlogs />
     </div>
   );
 };

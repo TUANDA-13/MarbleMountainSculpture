@@ -10,6 +10,10 @@ export const strings = {
     ProtectDes: 'Handcrafted by skilled artisans, each piece embodies tradition and precision.',
     PMDes: 'Using the finest stone and materials to ensure durability and elegance.',
     DeliveryDes: 'Safely delivering exquisite sculptures to your doorstep, anywhere in the world.',
+    ClientSays: "What our clients say",
+    HomeBlogs: "Our blogs",
+    ViewAllTopStories: "View all top stories",
+    ReadMore: "Read more",
   },
 };
 
