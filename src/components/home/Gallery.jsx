@@ -15,7 +15,7 @@ export const Gallery = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center w-full bg-white py-24">
+    <div className="flex flex-col items-center justify-center w-full bg-bg py-24">
       <div className="text-center text-black text-6xl font-bold">Gallery</div>
       <GradientLine className={'mb-[88px] mt-4'} />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-center text-black text-lg max-w-6xl px-4">

@@ -22,7 +22,7 @@ export default function WhyChooseUs() {
   }, [current]);
 
   return (
-    <section className="bg-gray-100 px-6 py-24">
+    <section className="bg-white px-6 py-24">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 items-start">
         {/* Left: Image + Dots */}
         <div className="md:w-1/2 flex flex-col items-center relative">

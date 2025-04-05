@@ -41,14 +41,16 @@ export default function TestimonialsCarousel() {
   const SLIDE_COUNT = 5;
 
   return (
-    <section className="bg- px-6 py-24 container">
-      <h2 className="text-4xl font-bold text-center">{i18nHome.getText().ClientSays}</h2>
-      <GradientLine className={'mx-auto mt-4 mb-[88px]'} />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-        <TestimonialsCard testimonial={testimonials[0]} />
-        <TestimonialsCard testimonial={testimonials[1]} />
+    <section className="bg-bg">
+      <div className=" px-6 py-24 container">
+        <h2 className="text-4xl font-bold text-center">{i18nHome.getText().ClientSays}</h2>
+        <GradientLine className={'mx-auto mt-4 mb-[88px]'} />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+          <TestimonialsCard testimonial={testimonials[0]} />
+          <TestimonialsCard testimonial={testimonials[1]} />
+        </div>
+        <TestimonialsCard className="mt-6" testimonial={testimonials[2]} />
       </div>
-      <TestimonialsCard className="mt-6" testimonial={testimonials[2]}/>
     </section>
   );
 }
