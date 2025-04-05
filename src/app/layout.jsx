@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Image
-                  className="dark:invert mr-2"
+                  className="text-black mr-2"
                   src="/svg/logo.svg"
                   alt="Next.js logo"
                   width={34}

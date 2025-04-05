@@ -12,7 +12,7 @@ export const Header = () => {
         <div className="flex items-center h-[96px] justify-between">
           <div className="flex h-[34px] items-center justify-center">
             <Image
-              className="dark:invert mr-2"
+              className="text-black mr-2"
               src="/svg/logo.svg"
               alt="Next.js logo"
               width={34}

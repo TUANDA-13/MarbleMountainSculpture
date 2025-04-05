@@ -48,9 +48,9 @@ export const HomeBlogs = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-8">
           {blogs.map((blog) => (
-            <div key={blog.id} className="blog-card flex gap-3">
-              <img src={'img/default.png'} className="h-[150px]" alt={blog.title} />
-              <div className="blog-content">
+            <div key={blog.id} className="blog-card block sm:flex gap-3">
+              <img src={'img/default.png'} className="w-full sm:max-w-[320px] sm:h-[150px]" alt={blog.title} />
+              <div className="blog-content sm:mt-0 mt-2">
                 <p className="blog-category">
                   {blog.category} | {blog.date}
                 </p>
