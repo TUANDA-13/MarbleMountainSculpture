@@ -4,7 +4,7 @@ import { GradientLine } from '@/common/gradient-line/GradientLine';
 
 export const Feature = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full h-screen bg-white">
+    <div className="flex flex-col items-center justify-center w-full py-24 bg-white">
       <div className="text-center text-black text-6xl font-bold">Features</div>
       <GradientLine className={"mb-[88px] mt-4"}/>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center text-black text-lg max-w-6xl px-4">

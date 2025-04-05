@@ -25,7 +25,7 @@ export default function WhyChooseUs() {
     <section className="bg-white px-6 py-24">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 items-start">
         {/* Left: Image + Dots */}
-        <div className="md:w-1/2 flex flex-col items-center relative">
+        <div className="w-full md:w-1/2 flex flex-col items-center relative">
           <div className="rounded-md overflow-hidden w-full max-w-[600px] h-[400px] relative">
             <AnimatePresence mode="wait">
               <motion.div

@@ -32,6 +32,7 @@ module.exports = {
         screens: {
           sm: '640px',
           md: '768px',
+          mid: '900px', // Added breakpoint between md and lg
           lg: '1024px',
           xl: '1228px',
           '2xl': '1228px',

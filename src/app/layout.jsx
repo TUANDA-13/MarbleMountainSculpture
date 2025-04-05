@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { NAV_ITEMS } from './const';
 import './globals.css';
 import { cn } from '@/utils/tailwind-merge.until';
+import { Header } from '@/components/Layout/Header';
 
 const josefin = Josefin_Sans({
   subsets: ['latin'],
@@ -21,35 +22,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={cn(josefin.className)}>
-        <header className="bg-bg z-navbar sticky top-0 shadow-lg">
-          <div className="container mx-auto px-4 max-w-[1228px] sticky top-0 z-navbar dark:bg-opacity-50 border-gray-light">
-            <div className="flex items-center h-[96px] justify-between">
-              <div className="flex h-[34px] items-center justify-center">
-                <Image
-                  className="dark:invert mr-2"
-                  src="/svg/logo.svg"
-                  alt="Next.js logo"
-                  width={34}
-                  height={34}
-                  priority
-                />
-                <span className="text-xl">marblemountainsculpture</span>
-              </div>
-              <nav className="flex flex-row items-center gap-10">
-                {NAV_ITEMS.map((item) => {
-                  return (
-                    <Link href={item.path} className="px-5 no-underline " key={item.path}>
-                      <GradientTypo text={item.title} className={'font-semibold whitespace-pre'} />
-                    </Link>
-                  );
-                })}
-              </nav>
-            </div>
-          </div>
-        </header>
+        <Header />
         {children}
         <footer className="bg-bg py-16 pb-6">
-          <div className="container mx-auto px-4 grid md:grid-cols-2 grid-cols-1">
+          <div className="container mx-auto px-4 grid lg:grid-cols-2 grid-cols-1">
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Image
@@ -84,10 +60,10 @@ export default function RootLayout({ children }) {
                 </Link>
               </div>
             </div>
-            <div className='ml-28'>
+            <div className="lg:ml-28 ml-0 lg:mt-0 mt-8">
               <h4 className="font-bold mb-4">Let’s connect</h4>
               <ul className="space-y-2">
-                <li className="flex items-center gap-2">
+                <li className="flex items-center gap-2 truncate" title='marblemountainsculpture@gmail.com'>
                   <img src="/svg/mail.svg" alt="Email" width={16} height={16} />
                   marblemountainsculpture@gmail.com
                 </li>
