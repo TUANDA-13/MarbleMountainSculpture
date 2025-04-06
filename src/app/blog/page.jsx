@@ -38,14 +38,14 @@ const Blog = () => {
           {'The Power of Search Engine Marketing:\nBoost Online Visibility & Drive Results'}
         </p>
       </div>
-      <div className="container pl-20 flex gap-8 my-28">
-        <div className="relative">
+      <div className="container pl-[auto] md:pl-20 flex gap-8 my-28 flex-wrap md:flex-nowrap">
+        <div className="hidden md:block relative">
           <BlogShare />
         </div>
         <div className="flex-1">
           <BlogContent />
         </div>
-        <div className="w-[390px] p-[2px] gradient rounded-sm h-min flex sticky top-[120px]">
+        <div className="w-full md:w-[390px] p-[2px] gradient rounded-sm h-min flex sticky top-[120px]">
           <div>
             <div className="bg-white p-[30px] rounded-sm">
               <p className="mb-6">Other blogs you may also like</p>
