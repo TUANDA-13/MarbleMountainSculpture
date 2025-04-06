@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
       <body className={cn(josefin.className)}>
         <Header />
         {children}
-        <footer className="bg-bg py-16 pb-6">
+        <footer className="bg-bg py-16 pb-6 text-black">
           <div className="container mx-auto px-4 grid lg:grid-cols-2 grid-cols-1">
             <div>
               <div className="flex items-center gap-2 mb-4">

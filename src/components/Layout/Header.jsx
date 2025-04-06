@@ -1,11 +1,17 @@
-"use client";
+'use client';
 
-import { NAV_ITEMS } from "@/app/const";
-import { GradientTypo } from "@/common/gradient-text/GradientTipo";
-import Image from "next/image";
-import Link from "next/link";
+import { NAV_ITEMS } from '@/app/const';
+import { GradientLine } from '@/common/gradient-line/GradientLine';
+import { GradientTypo } from '@/common/gradient-text/GradientTipo';
+import { cn } from '@/utils/tailwind-merge.until';
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useEffect } from 'react';
 
 export const Header = () => {
+  const pathname = usePathname();
+
   return (
     <header className="bg-bg z-navbar sticky top-0 shadow-lg">
       <div className="container mx-auto px-4 max-w-[1228px] sticky top-0 z-navbar dark:bg-opacity-50 border-gray-light">
@@ -24,8 +30,11 @@ export const Header = () => {
           <nav className="hidden md:flex flex-row items-center gap-4 mid:gap-4 lg:gap-6">
             {NAV_ITEMS.map((item) => {
               return (
-                <Link href={item.path} className="lg:px-5 px-2 no-underline " key={item.path}>
-                  <GradientTypo text={item.title} className={'font-semibold whitespace-pre'} />
+                <Link href={item.path} className="lg:px-5 px-2 no-underline relative" key={item.path}>
+                  <GradientTypo text={item.title} className={cn('font-medium whitespace-pre', pathname === item.path && "font-bold text")} />
+                  {pathname === item.path && (
+                    <GradientLine className={"absolute w-full left-[0px]"}/>
+                  )}
                 </Link>
               );
             })}
