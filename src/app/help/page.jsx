@@ -7,7 +7,7 @@ const HelpPage = () => {
   const [openId, setIsOpen] = useState('');
   return (
     <div className="mb-20">
-      <div className="help relative overflow-hidden flex flex-col items-center justify-center bg-cover bg-center bg-no-repeat bg-[url('/images/help.jpg')]">
+      <div className="help relative overflow-hidden flex flex-col items-center justify-center bg-cover bg-center">
         <p className="whitespace-pre-line text-center text-6xl font-bold text-white py-[150px] leading-20">
           {'We are here to help,\ncheckout our Frequently Asked Questions'}
         </p>
