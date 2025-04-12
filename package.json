@@ -17,6 +17,7 @@
     "next": "15.2.4",
     "particles-bg": "^2.5.5",
     "react": "^19.0.0",
+    "react-collapse": "^5.1.1",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^3.0.2"
   },

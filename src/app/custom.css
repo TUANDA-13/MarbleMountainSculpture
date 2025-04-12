@@ -1,3 +1,14 @@
 .gradient {
-    background: linear-gradient(to top right, #000, #4a1d16, #833731);
+  background: linear-gradient(to top right, #000, #4a1d16, #833731);
+}
+
+.gradient-text {
+  background: linear-gradient(to top right, #000, #4a1d16, #833731);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ReactCollapse--collapse {
+  transition: height 300ms;
 }

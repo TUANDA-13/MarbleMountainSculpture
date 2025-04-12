@@ -51,6 +51,12 @@ const Intro = () => {
             <p className="absolute inline-block w-1 h-[40px] bg-primary animate-caret mt-2">
               {'    '}
             </p>
+            <div className="flex justify-center items-center mt-4 ">
+              <div className="gradient w-60 rounded-4xl text-2xl py-2 flex flex-row gap-2 items-center justify-center cursor-pointer hover:[&>img]:margin-left-2 transition-all duration-300 ease-in-out">
+                <p>Product list</p>
+                <img src="/svg/arrow-right.svg" />
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -7,7 +7,6 @@ import { cn } from '@/utils/tailwind-merge.until';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect } from 'react';
 
 export const Header = () => {
   const pathname = usePathname();
@@ -16,7 +15,7 @@ export const Header = () => {
     <header className="bg-bg z-navbar sticky top-0 shadow-lg">
       <div className="container mx-auto px-4 max-w-[1228px] sticky top-0 z-navbar dark:bg-opacity-50 border-gray-light">
         <div className="flex items-center h-[96px] justify-between">
-          <div className="flex h-[34px] items-center justify-center">
+          <Link className="flex h-[34px] items-center justify-center cursor-pointer" href={"/"}>
             <Image
               className="text-black mr-2"
               src="/svg/logo.svg"
@@ -26,7 +25,7 @@ export const Header = () => {
               priority
             />
             <span className="text-xl font-bold">marblemountainsculpture</span>
-          </div>
+          </Link>
           <nav className="hidden md:flex flex-row items-center gap-4 mid:gap-4 lg:gap-6">
             {NAV_ITEMS.map((item) => {
               return (
