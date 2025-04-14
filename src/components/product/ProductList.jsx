@@ -1,5 +1,6 @@
-import { GradientTypo } from "@/common/gradient-text/GradientTipo";
-import { productList } from "./const";
+import { GradientTypo } from '@/common/gradient-text/GradientTipo';
+import { productList } from './const';
+import Link from 'next/link';
 
 export const ProductList = () => {
   return (
@@ -20,7 +21,9 @@ export const ProductList = () => {
                 'absolute bottom-4 ml-4 bg-bg px-[10px] py-1.5 cursor-pointer font-semibold opacity-0 group-hover:opacity-100 duration-300 '
               }
             >
-              <GradientTypo text={'View more'} />
+              <Link href={`/product/${item.id}`}>
+                <GradientTypo text={'View more'} />
+              </Link>
             </div>
           </div>
         </div>
