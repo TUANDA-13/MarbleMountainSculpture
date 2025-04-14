@@ -1,10 +1,6 @@
-'use client';
-
 import { cn } from '@/utils/tailwind-merge.until';
-import dynamic from 'next/dynamic';
-const Collapse = dynamic(() => import('react-collapse').then((mod) => mod.Collapse), {
-  ssr: false,
-});
+import { Collapse } from 'react-collapse';
+
 export const CollapseItem = ({ item, isOpen, onClick = () => {} }) => {
   return (
     <div className="flex flex-col gap-1 border-t pt-4 cursor-pointer" onClick={onClick}>

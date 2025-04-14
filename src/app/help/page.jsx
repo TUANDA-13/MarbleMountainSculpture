@@ -1,7 +1,7 @@
 "use client"
 import { CollapseItem } from '@/common/collapse/CollapseItem';
-import { helpText } from '@/components/help/const';
 import { useState } from 'react';
+import { helpText } from './help.const';
 
 const HelpPage = () => {
   const [openId, setIsOpen] = useState('');

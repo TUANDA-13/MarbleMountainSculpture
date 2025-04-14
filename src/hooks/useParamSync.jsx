@@ -1,31 +1,29 @@
 'use client';
 
-import { usePathname, useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useTransition } from 'react';
 
 export const useParamSync = (paramName, defaultValue) => {
-  const pathname = usePathname();
   const searchParams = useSearchParams();
-  const [paramValue, setParamValue] = useState(defaultValue);
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
 
-  // ✅ On mount or when URL changes
-  useEffect(() => {
-    const paramFromUrl = searchParams.get(paramName);
+  const valueFromUrl = searchParams.get(paramName);
+  const value = valueFromUrl !== null ? valueFromUrl : defaultValue;
 
-    if (paramFromUrl !== null && paramFromUrl !== '') {
-      setParamValue(paramFromUrl);
-    } else if (defaultValue !== undefined) {
-      setParamValue(defaultValue);
+  const setValue = (newValue) => {
+    const params = new URLSearchParams(searchParams.toString());
+
+    if (newValue) {
+      params.set(paramName, newValue);
+    } else {
+      params.delete(paramName);
     }
-  }, [searchParams, pathname, paramName, defaultValue]);
 
-  // ✅ Update URL manually if value changes (optional)
-  const updateParam = (value) => {
-    const url = new URL(window.location.href);
-    url.searchParams.set(paramName, value);
-    window.history.replaceState({}, '', url);
-    setParamValue(value);
+    startTransition(() => {
+      router.replace(`?${params.toString()}`);
+    });
   };
 
-  return [paramValue, updateParam];
+  return [value, setValue, isPending];
 };
