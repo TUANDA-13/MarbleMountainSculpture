@@ -3,13 +3,10 @@
 import { useParamSync } from '@/hooks/useParamSync';
 import { ProductSidebar as PSConst } from './const';
 import { cn } from '@/utils/tailwind-merge.until';
-import dynamic from 'next/dynamic';
 
-const Collapse = dynamic(() => import('react-collapse').then((mod) => mod.Collapse), {
-  ssr: false,
-});
 import { useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { Collapse } from 'react-collapse';
 
 export const ProductSidebar = () => {
   const [paramCategoryValue, updateCategoryParam] = useParamSync(
