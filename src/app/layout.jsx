@@ -6,7 +6,10 @@ import { NAV_ITEMS } from './const';
 import './globals.css';
 import { cn } from '@/utils/tailwind-merge.until';
 import { Header } from '@/components/Layout/Header';
+import { Amplify } from 'aws-amplify';
+import outputs from '../../amplify_outputs.json';
 
+Amplify.configure(outputs);
 const josefin = Josefin_Sans({
   subsets: ['latin'],
   weight: ['100', '200', '400', '500', '700'],
@@ -63,7 +66,10 @@ export default function RootLayout({ children }) {
             <div className="lg:ml-28 ml-0 lg:mt-0 mt-8">
               <h4 className="font-bold mb-4">Let’s connect</h4>
               <ul className="space-y-2">
-                <li className="flex items-center gap-2 truncate" title='marblemountainsculpture@gmail.com'>
+                <li
+                  className="flex items-center gap-2 truncate"
+                  title="marblemountainsculpture@gmail.com"
+                >
                   <img src="/svg/mail.svg" alt="Email" width={16} height={16} />
                   marblemountainsculpture@gmail.com
                 </li>
