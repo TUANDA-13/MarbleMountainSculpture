@@ -4,7 +4,7 @@ function templateReplace(str, params = {}) {
 
 export function createI18n(translations, lang = 'en') {
   const currentLang = translations[lang] ? lang : 'en';
-
+ 
   return {
     getText() {
       return translations[currentLang];
