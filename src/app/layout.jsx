@@ -6,6 +6,7 @@ import { NAV_ITEMS } from './const';
 import './globals.css';
 import { cn } from '@/utils/tailwind-merge.until';
 import { Header } from '@/components/Layout/Header';
+import AmplifyConfig from '@/components/config/AmplifyConfig';
 
 const josefin = Josefin_Sans({
   subsets: ['latin'],
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={cn(josefin.className)}>
+        <AmplifyConfig />
         <Header />
         {children}
         <footer className="bg-bg py-16 pb-6 text-black">

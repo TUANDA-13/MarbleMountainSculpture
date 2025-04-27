@@ -1,0 +1,34 @@
+import { fetchAuthSession } from 'aws-amplify/auth/server';
+import { NextRequest, NextResponse } from 'next/server';
+import { runWithAmplifyServerContext } from './utils/getCurrentUser';
+
+export async function middleware(request) {
+//   const response = NextResponse.next();
+
+//   const authenticated = await runWithAmplifyServerContext({
+//     nextServerContext: { request, response },
+//     operation: async (context) => {
+//       try {
+//         const session = await fetchAuthSession(context, {});
+//         return session.tokens !== undefined;
+//       } catch (error) {
+//         console.error('FetchAuthSession error:', error);
+//         return false;
+//       }
+//     },
+//   });
+
+//   if (authenticated) {
+//     return response;
+//   }
+
+//   // Nếu chưa authenticated thì redirect tới /signup
+//   return NextResponse.redirect(new URL('/admin/login', request.url));
+}
+
+export const config = {
+  matcher: [
+    // Áp dụng middleware cho tất cả đường dẫn trừ API và static files
+    '/admin',
+  ],
+};
