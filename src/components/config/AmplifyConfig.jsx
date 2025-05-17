@@ -1,8 +1,10 @@
 import { Amplify } from 'aws-amplify';
 import outputs from '../../../amplify_outputs.json';
 
-Amplify.configure(outputs, { ssr: true });
+Amplify.configure(outputs);
 
-export default function AmplifyConfig() {
-  return null;
+export default function AmplifyConfig({ children }) {
+  return <>
+    {children}
+  </>;
 }

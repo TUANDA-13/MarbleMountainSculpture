@@ -2,6 +2,11 @@
 
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { generateClient } from 'aws-amplify/data'
+import AmplifyConfig from '@/components/config/AmplifyConfig';
+
+const client = generateClient()
 
 export const categories = [
   {
@@ -65,13 +70,39 @@ export const categories = [
     ],
   },
 ];
+
 // Import as component
 const Category = () => {
+  const [categories, setCategories] = useState([]);
+  const [name, setName] = useState("123");
+  async function getCategories() {
+    const { data: items, errors } = await client.models.Category.list({ authMode: 'userPool' });
+    setCategories(items);
+    console.log("🚀 ~ getCategories ~ items:", items)
+  }
+
+  async function createCategory() {
+    if (name.trim() === "") {
+      alert("Please enter a name");
+      return;
+    }
+    const { data: items, errors } = await client.models.Category.create({
+      name: name,
+    }, { authMode: 'userPool' });
+    setName("");
+    await getCategories();
+    console.log("🚀 ~ createCategory ~ items:", items)
+  }
+
+  useEffect(() => {
+    getCategories();
+  }, []);
+
   const router = useRouter();
   return (
     <div className="container mx-auto p-4 mt-10 mb-[165px]">
       <h1 className="text-[60px] font-bold text-center">List products</h1>
-      <div className="p-2 rounded-[8px] border border-primary flex items-center w-fit text-primary text-lg shadow-[0px_4px_4px_0px_#00000040]">
+      <div className="p-2 rounded-[8px] border border-primary flex items-center w-fit text-primary text-lg shadow-[0px_4px_4px_0px_#00000040]" onClick={createCategory}>
         <Image src="/svg/add-icon.svg" className="mr-4" alt="plus" width={24} height={24} />
         <span>Add new category</span>
       </div>

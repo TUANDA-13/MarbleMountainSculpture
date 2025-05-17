@@ -12,6 +12,34 @@ const schema = a.schema({
       content: a.string(),
     })
     .authorization((allow) => [allow.guest()]),
+
+  Category: a
+    .model({
+      name: a.string(),
+      images: a.hasMany('Image', 'categoryId'),
+      subcategories: a.hasMany('SubCategory', 'categoryId'),
+    })
+    .authorization((allow) => [allow.guest(), allow.authenticated()]),
+
+  SubCategory: a
+    .model({
+      name: a.string(),
+      categoryId: a.string(),
+      category: a.belongsTo('Category', 'categoryId'),
+      images: a.hasMany('Image', 'subCategoryId'),
+    })
+    .authorization((allow) => [allow.guest(), allow.authenticated()]),
+
+  Image: a
+    .model({
+      url: a.string(),
+      title: a.string(),
+      categoryId: a.string(),
+      subCategoryId: a.string(),
+      category: a.belongsTo('Category', 'categoryId'),
+      subCategory: a.belongsTo('SubCategory', 'subCategoryId'),
+    })
+    .authorization((allow) => [allow.guest(), allow.authenticated()]),
 });
 
 export type Schema = ClientSchema<typeof schema>;
@@ -28,7 +56,7 @@ Go to your frontend source code. From your client-side code, generate a
 Data client to make CRUDL requests to your table. (THIS SNIPPET WILL ONLY
 WORK IN THE FRONTEND CODE FILE.)
 
-Using JavaScript or Next.js React Server Components, Middleware, Server 
+Using JavaScript or Next.js React Server Components, Middleware, Server
 Actions or Pages Router? Review how to generate Data clients for those use
 cases: https://docs.amplify.aws/gen2/build-a-backend/data/connect-to-API/
 =========================================================================*/
