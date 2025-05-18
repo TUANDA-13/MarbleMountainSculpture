@@ -2,15 +2,12 @@
 
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-<<<<<<< Updated upstream
 import { useEffect, useState } from 'react';
 import { generateClient } from 'aws-amplify/data'
 import AmplifyConfig from '@/components/config/AmplifyConfig';
 
 const client = generateClient()
-=======
 import { slugify } from '@/utils/slugify';
->>>>>>> Stashed changes
 
 export const categories = [
   {
