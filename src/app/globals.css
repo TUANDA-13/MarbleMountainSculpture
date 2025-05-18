@@ -1,9 +1,8 @@
 @import 'tailwindcss';
 @import 'tailwindcss/utilities';
 @config "../../tailwind.config.js";
-@import "./custom.css";
-@import "./embla.css";
-
+@import './custom.css';
+@import './embla.css';
 
 :root {
   --background: #ffffff;
@@ -54,5 +53,13 @@
 
   .animate-typing {
     animation: typing 5s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  .border-gradient {
+    border: 2px solid transparent;
+    border-image: linear-gradient(246.1deg, #833731 0%, #1d0c0b 100%);
+    border-image-slice: 1;
   }
 }

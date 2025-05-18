@@ -7,6 +7,7 @@ import { generateClient } from 'aws-amplify/data'
 import AmplifyConfig from '@/components/config/AmplifyConfig';
 
 const client = generateClient()
+import { slugify } from '@/utils/slugify';
 
 export const categories = [
   {
@@ -111,7 +112,7 @@ const Category = () => {
           <div
             key={category.id}
             className="p-[30px] rounded-[8px] border hover:bg-gray-200 hover:font-bold cursor-pointer transition duration-200 border-black bg-gray-100 flex items-center whitespace-nowrap w-full text-lg shadow-[0px_2px_4px_0px_#00000040]"
-            onClick={() => router.push(`/admin/category/${category.id}`)}
+            onClick={() => router.push(`/admin/category/${slugify(category.name)}`)}
           >
             <Image src="/svg/folder-icon.svg" className="mr-4" alt="edit" width={24} height={24} />
             <span>{category.name}</span>

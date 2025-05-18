@@ -11,13 +11,13 @@ export default function Breadcrumb({ crumbs = [], separator = '/' }) {
             <li key={index} className="flex items-center">
               {!isLast && crumb.href ? (
                 <>
-                  <Link href={crumb.href} className="hover:text-black font-medium">
+                  <Link href={crumb.href} className="hover:text-black text-lg font-medium">
                     {crumb.label}
                   </Link>
                   <span className="mx-2">{separator}</span>
                 </>
               ) : (
-                <span className="text-black font-semibold">{crumb.label}</span>
+                <span className="text-black text-lg font-semibold">{crumb.label}</span>
               )}
             </li>
           );
